@@ -1,5 +1,4 @@
 import requests
-import json
 
 
 def send_data(temperature, humidity, umbrella_present):

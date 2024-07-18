@@ -19,3 +19,5 @@ def check_temNhum(DHT_SENSOR, DHT_PIN):
     else:
         # 데이터 읽기 실패
         print("온습도 데이터 읽기 실패")
+        
+    return humidity, temperature
