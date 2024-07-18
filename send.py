@@ -2,14 +2,12 @@ import requests
 import json
 
 
-def send_data(temperature, humidity, how_far):
+def send_data(temperature, humidity, umbrella_present):
     url = "http://localhost:8000/update"
     data = {
         "temperature": temperature,
         "humidity": humidity,
-        "is_raining": True,
-        "umbrella_present": False,
-        "door_open": how_far
+        "umbrella_present": umbrella_present,
     }
 
     try:
@@ -18,8 +16,6 @@ def send_data(temperature, humidity, how_far):
         print('Data sent successfully:', response.json())
     except requests.exceptions.RequestException as e:
         print('Error sending data:', e)
-
-send_data()
 
 
 
@@ -53,5 +49,3 @@ def send_data(temp, hum, rain, umb, door):
         print('Data sent successfully:', response.json())
     except requests.exceptions.RequestException as e:
         print('Error sending data:', e)
-
-send_data()
